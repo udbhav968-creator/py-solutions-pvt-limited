@@ -90,6 +90,22 @@ The API is now running at `http://127.0.0.1:8000/`.
 
 ---
 
+## 🚀 Deployment (Vercel)
+
+This project is fully configured for serverless deployment on **Vercel**. 
+
+1. Import your GitHub repository into the Vercel Dashboard.
+2. Under **Environment Variables**, add:
+   - `DEBUG`: `False`
+   - `SECRET_KEY`: `<generate-a-secure-key>`
+   - `DATABASE_URL`: `<your-remote-postgres-mysql-url>`
+3. Click **Deploy**.
+
+> **⚠️ CRITICAL: Database limitation on Vercel**
+> Vercel has an ephemeral filesystem. You **must** provide a remote `DATABASE_URL` (like Supabase, Neon, AWS RDS, or PlanetScale) in your Vercel project environment variables. If you do not provide one, the application will fall back to SQLite, which will fail to persist data upon any write operations!
+
+---
+
 ## 📚 API Documentation
 
 We use automated OpenAPI schema generation. Once the server is running, you can explore and test the endpoints directly from your browser:
