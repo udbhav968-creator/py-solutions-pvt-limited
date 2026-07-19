@@ -13,16 +13,15 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Appointment',
+            name='SystemLog',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('is_deleted', models.BooleanField(db_index=True, default=False)),
                 ('deleted_at', models.DateTimeField(blank=True, null=True)),
-                ('appointment_date', models.DateTimeField(db_index=True)),
-                ('status', models.CharField(choices=[('Pending', 'Pending'), ('Confirmed', 'Confirmed'), ('Cancelled', 'Cancelled'), ('Completed', 'Completed')], db_index=True, default='Pending', max_length=20)),
-                ('symptoms', models.TextField(blank=True, null=True)),
+                ('action', models.CharField(max_length=255)),
+                ('description', models.TextField()),
             ],
             options={
                 'abstract': False,
