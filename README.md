@@ -104,14 +104,26 @@ This project is fully configured for serverless deployment on **Vercel**.
 > **⚠️ CRITICAL: Database limitation on Vercel**
 > Vercel has an ephemeral filesystem. You **must** provide a remote `DATABASE_URL` (like Supabase, Neon, AWS RDS, or PlanetScale) in your Vercel project environment variables. If you do not provide one, the application will fall back to SQLite, which will fail to persist data upon any write operations!
 
+### 🌐 Live Deployment
+
+The API is currently live on Vercel!
+
+> **Note**: Visiting the root URL (`/`) will intentionally return a `404 Page Not Found` error because this is purely a backend API and does not serve frontend HTML pages. To interact with the application, you must navigate directly to the documentation endpoints below.
+
 ---
 
 ## 📚 API Documentation
 
-We use automated OpenAPI schema generation. Once the server is running, you can explore and test the endpoints directly from your browser:
+We use automated OpenAPI schema generation. You can explore and test the endpoints directly from your browser:
 
+### Local Links:
 - **Swagger UI**: [http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/)
 - **ReDoc**: [http://127.0.0.1:8000/api/redoc/](http://127.0.0.1:8000/api/redoc/)
+
+### Live Production Links:
+- **Swagger UI**: [https://pysolutionss.vercel.app/api/docs/](https://pysolutionss.vercel.app/api/docs/)
+- **ReDoc**: [https://pysolutionss.vercel.app/api/redoc/](https://pysolutionss.vercel.app/api/redoc/)
+
 - **Postman**: Import the `Postman_Collection.json` located in the root directory.
 
 ---
